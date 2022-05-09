@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+header {
+  width: 100%;
+  background-color: blueviolet;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  height: 8vh;
+}
+
+.logo-container {
+  width: 20vw;
+}
+
+.nav-container {
+  width: 80vw;
+  background-color: aquamarine;
+}
+
+.nav-container ul {
+  height: 100%;
+  background-color: bisque;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-container ul li {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+main {
+  max-width: max-content;
+  display: flexbox;
+  flex-wrap: wrap;
+}
+
+.intro-container {
+  width: 100vw;
+  height: 32vh;
+  background-color: cornflowerblue;
+}
+
+.rooms {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.room {
+  width: 320px;
+  height: 500px;
+  background-color: azure;
+  margin-top: 12px;
+  border-radius: 30px;
+}

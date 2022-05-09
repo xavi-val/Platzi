@@ -1,0 +1,53 @@
+.card {
+  background-color: #F2F2F2;
+  width: 400px;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.background img {
+  width: 100%;
+}
+
+.profile_picture {
+  width: 150px;
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile_picture img {
+  border-radius: 300px;
+  width: 100%;
+  z-index: 2;
+  border: 2px solid white;
+}
+
+.info{    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+}
+
+
+.nombre{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+.descripcion{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+
