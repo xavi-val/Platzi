@@ -1,0 +1,19 @@
+{
+  "name": "asincronismo-en-javascript",
+  "version": "1.0.0",
+  "description": "Trabajando Asincronismo en JS",
+  "main": "script.js",
+  "scripts": {
+    "callback": "node callbacks.js",
+    "promise" : "node promesas.js",
+    "async": "node async.js"
+  },
+  "keywords": [
+    "JS"
+  ],
+  "author": "Javier Valdez",
+  "license": "ISC",
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
+}
