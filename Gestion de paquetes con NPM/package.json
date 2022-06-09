@@ -1,0 +1,15 @@
+{
+  "name": "npm-platzi",
+  "version": "1.0.0",
+  "description": "curso de platzi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "platzi",
+    "npm"
+  ],
+  "author": "Javier Valdez",
+  "license": "MIT"
+}

@@ -11,6 +11,10 @@ main {
   align-items: center;
 }
 
+section{
+  margin-bottom: 32px;
+}
+
 .three-michis{
   min-height: 30vh;
 }

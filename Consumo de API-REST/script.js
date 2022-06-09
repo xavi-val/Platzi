@@ -1,7 +1,6 @@
 const URL = "https://api.thecatapi.com/v1/images/search";
 const URL_FAV = "https://api.thecatapi.com/v1/favourites";
-
-let arrayID = [];
+const URL_UP = "https://api.thecatapi.com/v1/images/upload";
 
 async function getKitty(URL) {
   const res = await fetch(`${URL}?limit=3`, {
@@ -38,42 +37,20 @@ async function addKittyToFavorites(id) {
 async function showThreeKittys() {
   const data = await getKitty(URL);
   const container = document.querySelector(".three-michis");
-  arrayID = [];
-  let iterator = 0;
 
-  for (item of data) {
+  for (let item of data) {
     const div = document.createElement("div");
     const img = document.createElement("img");
-    const button1 = document.createElement("button");
-    const button2 = document.createElement("button");
-    const button3 = document.createElement("button");
+    const button = document.createElement("button");
     const button_text = document.createTextNode("Favorito");
 
     div.appendChild(img);
     div.classList.add("card-container");
     img.src = item.url;
 
-    switch (iterator) {
-      case 0:
-        button1.appendChild(button_text);
-        button1.onclick = () => addKittyToFavorites(data[0].id);
-        div.appendChild(button1);
-        break;
-      case 1:
-        button2.appendChild(button_text);
-        button2.onclick = () => addKittyToFavorites(data[1].id);
-        div.appendChild(button2);
-        break;
-      case 2:
-        button3.appendChild(button_text);
-        button3.onclick = () => addKittyToFavorites(data[2].id);
-        div.appendChild(button3);
-        break;
-      default:
-        break;
-    }
-
-    iterator++;
+    button.appendChild(button_text);
+    button.onclick = () => addKittyToFavorites(item.id);
+    div.appendChild(button);
 
     container.appendChild(div);
   }
@@ -97,11 +74,11 @@ async function deleteFavorite(id) {
     headers: {
       "Content-Type": "application/json",
       "x-api-key": " 6870c183-0268-4451-8dc0-d0ffd8419db1",
-    },    
+    },
   });
-  
-  const container2 = document.querySelector(".favorites");  
-  container2.innerHTML = "";  
+
+  const container2 = document.querySelector(".favorites");
+  container2.innerHTML = "";
   showFavoritesKittys();
 }
 
@@ -150,6 +127,31 @@ async function showFavoritesKittys() {
     img.src = item.image.url;
     button.onclick = () => deleteFavorite(item.id);
   }
+}
+
+async function uploadMichiPhoto() {
+  const form = document.getElementById("uploadingForm");
+  const formData = new FormData(form);
+
+  console.log(formData.get("file"));
+
+  const res = await fetch(URL_UP, {
+    method: "post",
+    headers: {
+      // "Content-Type": formData.get("file").type,
+      "x-api-key": " 6870c183-0268-4451-8dc0-d0ffd8419db1",
+    },
+    body: formData
+  });
+
+  const data = await res.json();
+
+  if (res.status >= 300) {
+    console.log(`Hubo un error al subir michi: ${res.status} ${data.message}`);    
+  }else{
+    console.log("Foto subida con exito");
+    console.log(data);    
+  }  
 }
 
 showThreeKittys();
