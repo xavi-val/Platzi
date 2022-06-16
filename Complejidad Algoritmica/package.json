@@ -1,0 +1,12 @@
+{
+  "name": "complejidad-algoritmica",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "app": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Javier Valdez",
+  "license": "MIT"
+}
